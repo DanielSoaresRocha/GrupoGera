@@ -1,1 +1,27 @@
-<p>login works!</p>
+
+<div class="c-container">
+    <img src="../../../../assets/images/background.jpg" alt="Energia Solar"/>
+    <div class="c-backdrop"></div>
+
+    <div class="c-card">
+        <img src="../../../../assets/images/logo.png"/>
+
+        <div class="c-form-group mt-5">
+            <div class="c-form-group__input">
+                <img src="../../../../assets/images/icons/user-circle.svg"/>
+                <input (blur)="onBlur($event)"/>
+                <label>Username</label>
+            </div>
+            <div class="c-form-group__line"></div>
+
+            <div class="c-form-group__input">
+                <img src="../../../../assets/images/icons/key.svg" />
+                <input (blur)="onBlur($event)" type="password"/>
+                <label>Password</label>
+            </div>
+            <div class="c-form-group__line"></div>
+        </div>
+
+        <button class="btn is-sucess mt-5">Entrar</button>
+    </div>
+</div>

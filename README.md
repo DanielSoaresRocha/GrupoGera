@@ -2,6 +2,17 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.3.
 
+## Passos Iniciais
+
+- Script de iniciação (ng serve --port 9091 --open)
+- Configuração do scss
+- Estilos scss padrões
+- Criação de módulos principais (ng g m modules/home)
+- Configuração de rotas (app-routing.module.ts) e index.ts
+- Criação de componentes dos módulos (ng g c modules/auth/login)
+- Estruturação do html e css da página (BEM)
+- Organização dos assets
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

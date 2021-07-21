@@ -1,0 +1,41 @@
+.c-form-group {
+  &__input {
+    display: flex;
+    position: relative;
+    img {
+      color: white;
+      width: 36px;
+      height: 36px;
+    }
+    label {
+      position: absolute;
+      top: 50%;
+      left: 44px;
+      transform: translateY(-50%);
+      transition: 0.6s;
+      font-weight: bold;
+      color: rgba(255, 255, 255, 0.77);
+    }
+    input {
+      border: none;
+      background: transparent;
+      outline: none;
+      margin-left: 8px;
+      padding: 0;
+      font-size: 20px;
+      z-index: 1;
+      &:focus + label,
+      &.has-content + label {
+        transform: translateY(-30px);
+      }
+    }
+  }
+  &__line {
+    background-color: white;
+    height: 0.188rem;
+    margin-top: 0.5rem;
+    + .c-form-group__input {
+      margin-top: 24px;
+    }
+  }
+}
