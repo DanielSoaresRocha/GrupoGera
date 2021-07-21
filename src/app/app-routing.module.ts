@@ -11,7 +11,7 @@ export const routes: Routes = [
     loadChildren: () => import("./modules/auth").then(m => m.AuthModule) 
   },
   { 
-    path: "app", 
+    path: "home", 
     loadChildren: () => import("./modules/features.module").then(m => m.FeaturesModule) 
   },
 ];
