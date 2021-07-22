@@ -1,7 +1,30 @@
 .c-sidebar {
-  width: 280px;
+  width: 17.5rem;
   min-height: 100%;
   background: linear-gradient(345.44deg, #eb856a 13.36%, #c85a3e 78.11%);
   box-shadow: 4px 9px 7px rgb(0 0 0 / 25%);
   transform: translateY(0px);
+  padding: 1.25rem;
+  transition: 0.6s;
+  li {
+    border-radius: 10px;
+    padding: 6px 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+    margin-bottom: 10px;
+    transition: 0.4s;
+    a {
+      margin-left: 12px;
+    }
+    &.is-active,
+    &:hover {
+      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+      background: rgba(235, 133, 106, 0.82);
+    }
+  }
+  &:not(.show) {
+    margin-left: -280px;
+  }
 }

@@ -1,3 +1,12 @@
-<nav class="c-sidebar">
-    ok
+<nav class="c-sidebar show" [ngClass]="{'show': showSideBar}">
+    <ul>
+        <li [ngClass]="{'is-active': activeView == 1}" (click)="changeView(1)">
+            <img src="../../../../../assets/images/icons/home.svg"/>
+            <a >Dashboard</a>
+        </li>
+        <li [ngClass]="{'is-active': activeView == 2}" (click)="changeView(2)">
+            <img src="../../../../../assets/images/icons/home.svg" />
+            <a>Gerenciar</a>
+        </li>
+    </ul>
 </nav>
