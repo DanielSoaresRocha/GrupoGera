@@ -1,6 +1,6 @@
 import { Fatura } from "./fatura";
 
-export interface UnidadeConsumidora{
+export class UnidadeConsumidora{
     createdAt: string;
     distribuidora: string;
     endereco: string;

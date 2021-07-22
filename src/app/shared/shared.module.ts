@@ -7,6 +7,7 @@ import { LayoutComponent, NavbarComponent, SidebarComponent} from './components/
 // Modules
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Services
 import { UnidadeConsumidoraService, FaturaService } from '@src/app/shared/services'
@@ -20,11 +21,17 @@ import { UnidadeConsumidoraService, FaturaService } from '@src/app/shared/servic
   imports: [
     CommonModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [
     UnidadeConsumidoraService,
     FaturaService
+  ],
+  exports: [
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class SharedModule { }

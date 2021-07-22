@@ -1,0 +1,16 @@
+<div class="m-container">
+    <div class="m-container--modal">
+        <form [formGroup]="formUnidade" (ngSubmit)="submit()">
+            <label>Nome</label>
+            <input  name="nome" id="nome" formControlName="nome" />
+            <label>Distribuidora</label>
+            <input  name="distribuidora" id="distribuidora" formControlName="distribuidora" />
+            <label>Número</label>
+            <input  name="numero" id="numero" formControlName="numero" />
+            <label>Endereço</label>
+            <input  name="endereco" id="endereco" formControlName="endereco" />
+
+            <button type="submit">Salvar</button>
+        </form>
+    </div>
+</div>

@@ -16,4 +16,8 @@ export class UnidadeConsumidoraService {
   getAll(): Observable<UnidadeConsumidora[]>{
     return this.httpClient.get<UnidadeConsumidora[]>(`${env.baseUrl}/unidadeConsumidora`);
   }
+
+  add(unidade: UnidadeConsumidora): Observable<UnidadeConsumidora>{
+    return this.httpClient.post<UnidadeConsumidora>(`${env.baseUrl}/unidadeConsumidora`, unidade);
+  }
 }
