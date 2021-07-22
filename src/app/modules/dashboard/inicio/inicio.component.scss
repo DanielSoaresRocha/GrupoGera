@@ -1,0 +1,61 @@
+@import "../../../../sass/variables";
+
+.c-cards {
+  display: grid;
+  grid-template-areas: "c1 c2 c3";
+  row-gap: 26px;
+  @media (max-width: 1410px) {
+    grid-template-areas:
+      "c1 c2"
+      "c3 c3";
+  }
+  @media (max-width: 1056px) {
+    grid-template-areas:
+      "c1"
+      "c2"
+      "c3";
+  }
+  &__card {
+    height: 182px;
+    width: 324px;
+    background: #ffffff;
+    box-shadow: 0px 4px 10px rgb(0 0 0 / 50%);
+    border-radius: 7px;
+    border-top: 7px solid;
+    padding: 20px;
+    justify-self: center;
+    font-size: 22px;
+    &:nth-child(1) {
+      grid-area: c1;
+      border-color: $info;
+      color: $info;
+    }
+    &:nth-child(2) {
+      border-color: $sucess;
+      color: $sucess;
+      grid-area: c2;
+    }
+    &:nth-child(3) {
+      border-color: $danger;
+      color: $danger;
+      grid-area: c3;
+    }
+
+    &__description {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      span {
+        margin-left: 10px;
+      }
+    }
+    &__value {
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 65px;
+    }
+  }
+}
