@@ -6,6 +6,10 @@ import { LayoutComponent, NavbarComponent, SidebarComponent} from './components/
 
 // Modules
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+
+// Services
+import { UnidadeConsumidoraService, FaturaService } from '@src/app/shared/services'
 
 @NgModule({
   declarations: [
@@ -15,7 +19,12 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule
+  ],
+  providers: [
+    UnidadeConsumidoraService,
+    FaturaService
   ]
 })
 export class SharedModule { }

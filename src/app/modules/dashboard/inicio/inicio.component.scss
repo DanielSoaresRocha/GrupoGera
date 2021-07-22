@@ -4,27 +4,30 @@
   display: grid;
   grid-template-areas: "c1 c2 c3";
   row-gap: 26px;
-  @media (max-width: 1410px) {
+  @media (max-width: 1230px) {
     grid-template-areas:
       "c1 c2"
       "c3 c3";
   }
-  @media (max-width: 1056px) {
+
+  @media (max-width: 941px) {
     grid-template-areas:
       "c1"
       "c2"
       "c3";
   }
   &__card {
-    height: 182px;
-    width: 324px;
+    height: 146px;
+    width: 276px;
     background: #ffffff;
     box-shadow: 0px 4px 10px rgb(0 0 0 / 50%);
     border-radius: 7px;
     border-top: 7px solid;
     padding: 20px;
     justify-self: center;
-    font-size: 22px;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
     &:nth-child(1) {
       grid-area: c1;
       border-color: $info;
@@ -50,12 +53,53 @@
       }
     }
     &__value {
-      height: 100px;
+      flex-grow: 1;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: bold;
-      font-size: 65px;
+      font-size: 52px;
+    }
+  }
+}
+
+// Table
+
+.table {
+  border: 2px solid $info;
+  border-radius: 4px;
+  &__title {
+    background-color: $info;
+    color: white;
+    padding: 10px 20px;
+  }
+  &__content {
+    padding: 8px 20px 8px 20px;
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      thead tr {
+        border-bottom: 2px solid #aa9d9d;
+        th {
+          padding: 12px;
+          color: #6d6969;
+          text-align: left;
+        }
+      }
+      tbody tr {
+        transition: 0.4s;
+        td {
+          text-align: left;
+          padding: 12px;
+          border-bottom: 1px solid #cbc8c8;
+        }
+        &:hover {
+          background-color: #e7e3e3;
+        }
+        &:last-child td {
+          border: 0;
+        }
+      }
     }
   }
 }

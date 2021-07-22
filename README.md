@@ -12,6 +12,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Criação de componentes dos módulos (ng g c modules/auth/login)
 - Estruturação do html e css da página (BEM)
 - Organização dos assets
+- Configuração de environment
+- Criação dos serviços e models
+- tsConfig
 
 ## Development server
 
