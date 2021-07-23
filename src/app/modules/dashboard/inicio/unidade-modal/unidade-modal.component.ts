@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange, SimpleChanges } from '@angular/core';
 import { UnidadeConsumidora } from '@src/app/core/models/unidade-consumidora.model';
 import { UnidadeConsumidoraService } from '@src/app/shared/services';
 import { FormGroup, FormControl } from '@angular/forms';
@@ -8,17 +8,30 @@ import { FormGroup, FormControl } from '@angular/forms';
   templateUrl: './unidade-modal.component.html',
   styleUrls: ['./unidade-modal.component.scss']
 })
-export class UnidadeModalComponent implements OnInit {
-  unidade: UnidadeConsumidora;
+export class UnidadeModalComponent implements OnInit, AfterViewInit {
   formUnidade: FormGroup;
+
+  @Input() unidade: UnidadeConsumidora = new UnidadeConsumidora();
 
   @Output() submitButton = new EventEmitter();
   @Output() onCloseModal = new EventEmitter();
 
   constructor(private unidadeConsumidoraService: UnidadeConsumidoraService) { }
 
+  reset(){
+    this.formUnidade.reset();
+    this.submitButton.emit();
+  }
+  
+  ngAfterViewInit (): void {
+    document.getElementById('modal').querySelectorAll('input').forEach((element) => {
+      if(element.value.length)
+        element.classList.add('has-content')
+    })
+  }
+
   ngOnInit(): void {
-    this.createForm(new UnidadeConsumidora());
+    this.createForm(this.unidade);
   }
 
   add(){
@@ -35,16 +48,12 @@ export class UnidadeModalComponent implements OnInit {
   }
 
   submit(){
-    this.unidadeConsumidoraService.add(this.formUnidade.value).subscribe(
-      (response) => {
-        this.formUnidade.reset();
-        this.submitButton.emit();
-        console.log(response)
-      },
-      (error) => {
-        console.log(error)
-      }
-    )
+    if(this.unidade.id){
+      this.unidadeConsumidoraService.update(this.formUnidade.value, this.unidade.id).subscribe(() => this.reset())
+      return;
+    }
+    
+    this.unidadeConsumidoraService.add(this.formUnidade.value).subscribe(() => this.reset())
   }
 
   onBlur(element: FocusEvent){
@@ -55,8 +64,6 @@ export class UnidadeModalComponent implements OnInit {
     }else{
       input.classList.remove('has-content')
     }
-
-    console.log(input.parentNode)
   }
 
   closeModal(){

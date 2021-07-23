@@ -60,6 +60,8 @@
                     <td>{{unidade.createdAt}}</td>
                     <td>{{unidade.updatedAt}}</td>
                     <td>
+                        <img src="assets/images/icons/edit.svg" title="Editar"
+                        style="cursor: pointer;" (click)="editUnidade(unidade)" />
                         <img src="assets/images/icons/trash.svg" title="Excluir"
                             style="cursor: pointer;" (click)="deleteUnidade(unidade)" />
                     </td>
@@ -104,5 +106,9 @@
     </div>
 </div>
 
-<app-unidade-modal *ngIf="addUnidade" (submitButton)="getAllUnidades()" (onCloseModal)="addUnidade = false">
+<app-unidade-modal
+    *ngIf="addUnidade"
+    [unidade]="unidade"
+    (submitButton)="getAllUnidades()"
+    (onCloseModal)="closeModal()">
 </app-unidade-modal>

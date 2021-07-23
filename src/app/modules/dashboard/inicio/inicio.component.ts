@@ -16,6 +16,7 @@ export class InicioComponent implements OnInit {
   unidades: UnidadeConsumidora[] = [];
   faturas: Fatura[] = [];
   addUnidade = false;
+  unidade: UnidadeConsumidora = new UnidadeConsumidora();
 
   constructor(
     private unidadeConsumidoraService: UnidadeConsumidoraService,
@@ -63,5 +64,15 @@ export class InicioComponent implements OnInit {
         this.getAllUnidades();
       }
     )
+  }
+
+  editUnidade(unidade: UnidadeConsumidora){
+    this.unidade = unidade;
+    this.addUnidade = true;
+  }
+
+  closeModal(){
+    this.unidade = new UnidadeConsumidora();
+    this.addUnidade = false;
   }
 }

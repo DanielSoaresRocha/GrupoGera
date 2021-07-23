@@ -1,4 +1,4 @@
-<div class="m-modal">
+<div class="m-modal" id="modal">
     <div class="m-modal__backdrop" (click)="closeModal()"></div>
 
     <div class="m-modal__content">
@@ -39,7 +39,7 @@
         </form>
     </div>
     <div class="m-modal__content__footer">
-        <button (click)="submit()" class="btn is-sucess">Cadastrar</button>
+        <button (click)="submit()" class="btn is-sucess">{{unidade.id ? 'Atualizar' : 'Cadastrar'}}</button>
         <button (click)="closeModal()" class="btn is-danger">Cancelar</button>
     </div>
 </div>

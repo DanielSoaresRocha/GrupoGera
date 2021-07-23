@@ -14,14 +14,18 @@ export class UnidadeConsumidoraService {
   constructor(private httpClient: HttpClient) { }
 
   getAll(): Observable<UnidadeConsumidora[]>{
-    return this.httpClient.get<UnidadeConsumidora[]>(`${env.baseUrl}/unidadeConsumidora`);
+    return this.httpClient.get<UnidadeConsumidora[]>(`${env.baseUrl}unidadeConsumidora`);
   }
 
   add(unidade: UnidadeConsumidora): Observable<UnidadeConsumidora>{
-    return this.httpClient.post<UnidadeConsumidora>(`${env.baseUrl}/unidadeConsumidora`, unidade);
+    return this.httpClient.post<UnidadeConsumidora>(`${env.baseUrl}unidadeConsumidora`, unidade);
   }
 
   delete(unidade: UnidadeConsumidora): Observable<UnidadeConsumidora>{
-    return this.httpClient.delete<UnidadeConsumidora>(`${env.baseUrl}/unidadeConsumidora/${unidade.id}`);
+    return this.httpClient.delete<UnidadeConsumidora>(`${env.baseUrl}unidadeConsumidora/${unidade.id}`);
+  }
+
+  update(unidade: UnidadeConsumidora, idUnidade: number): Observable<UnidadeConsumidora>{
+    return this.httpClient.put<UnidadeConsumidora>(`${env.baseUrl}unidadeConsumidora/${idUnidade}`, unidade);
   }
 }
