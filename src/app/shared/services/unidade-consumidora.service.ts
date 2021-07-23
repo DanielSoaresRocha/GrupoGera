@@ -20,4 +20,8 @@ export class UnidadeConsumidoraService {
   add(unidade: UnidadeConsumidora): Observable<UnidadeConsumidora>{
     return this.httpClient.post<UnidadeConsumidora>(`${env.baseUrl}/unidadeConsumidora`, unidade);
   }
+
+  delete(unidade: UnidadeConsumidora): Observable<UnidadeConsumidora>{
+    return this.httpClient.delete<UnidadeConsumidora>(`${env.baseUrl}/unidadeConsumidora/${unidade.id}`);
+  }
 }

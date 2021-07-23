@@ -42,4 +42,16 @@ export class UnidadeModalComponent implements OnInit {
     )
   }
 
+  onBlur(element: FocusEvent){
+    let input = element.target as HTMLInputElement;
+
+    if(input.value.length){
+      input.classList.add('has-content')
+    }else{
+      input.classList.remove('has-content')
+    }
+
+    console.log(input.parentNode)
+  }
+
 }

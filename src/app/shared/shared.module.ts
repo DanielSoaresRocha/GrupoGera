@@ -11,12 +11,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Services
 import { UnidadeConsumidoraService, FaturaService } from '@src/app/shared/services'
+import { InputDirective } from '../core/directives/input.directive';
 
 @NgModule({
   declarations: [
     LayoutComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    InputDirective
   ],
   imports: [
     CommonModule,
@@ -31,7 +33,8 @@ import { UnidadeConsumidoraService, FaturaService } from '@src/app/shared/servic
   ],
   exports: [
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    InputDirective
   ]
 })
 export class SharedModule { }

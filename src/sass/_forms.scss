@@ -38,4 +38,13 @@
       margin-top: 24px;
     }
   }
+  &.is-normal {
+    label {
+      color: $primary;
+      left: 0;
+    }
+    .c-form-group__line {
+      background-color: $primary;
+    }
+  }
 }

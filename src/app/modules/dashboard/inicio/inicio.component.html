@@ -1,5 +1,5 @@
 <div class="c-cards">
-    <div class="c-cards__card">
+    <div class="c-cards__card" appDestaque>
         <div class="c-cards__card__description">
             <img src="../../../../assets/images/icons/light.svg"/>
             <span>Unidades Consumidoras</span>
@@ -46,6 +46,7 @@
                     <th>Endereço</th>
                     <th>Criado em</th>
                     <th>Atualizado em</th>
+                    <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
@@ -57,6 +58,10 @@
                     <td>{{unidade.endereco}}</td>
                     <td>{{unidade.createdAt}}</td>
                     <td>{{unidade.updatedAt}}</td>
+                    <td>
+                        <img src="../../../../assets/images/icons/trash.svg" title="Excluir"
+                            style="cursor: pointer;" (click)="deleteUnidade(unidade)" />
+                    </td>
                 </tr>
             </tbody>
         </table>

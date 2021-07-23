@@ -52,4 +52,15 @@ export class InicioComponent implements OnInit {
     return value.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
   }
 
+  deleteUnidade(unidade: UnidadeConsumidora){
+    if(!confirm(`Têm certeza eu deseja excluir a unidade ${unidade.nome}?`))
+      return
+
+    this.unidadeConsumidoraService.delete(unidade).subscribe(
+      () => {
+        this.getAllUnidades();
+        alert(`${unidade.nome} foi excluída com sucesso!`)
+      }
+    )
+  }
 }
