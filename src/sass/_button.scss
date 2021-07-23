@@ -14,4 +14,16 @@
       background-color: darken($sucess, 10);
     }
   }
+  &.is-primary {
+    background-color: $primary;
+    &:hover {
+      background-color: darken($primary, 10);
+    }
+  }
+  &.is-danger {
+    background-color: $danger;
+    &:hover {
+      background-color: darken($danger, 10);
+    }
+  }
 }

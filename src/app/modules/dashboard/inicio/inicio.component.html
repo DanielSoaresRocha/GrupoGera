@@ -1,7 +1,7 @@
 <div class="c-cards">
-    <div class="c-cards__card" appDestaque>
+    <div class="c-cards__card">
         <div class="c-cards__card__description">
-            <img src="../../../../assets/images/icons/light.svg"/>
+            <img src="assets/images/icons/light.svg"/>
             <span>Unidades Consumidoras</span>
         </div>
         <div class="c-cards__card__value">
@@ -11,7 +11,7 @@
 
     <div class="c-cards__card">
         <div class="c-cards__card__description">
-            <img src="../../../../assets/images/icons/invoice.svg" />
+            <img src="assets/images/icons/invoice.svg" />
             <span>Total de Faturas</span>
         </div>
         <div class="c-cards__card__value">
@@ -21,7 +21,7 @@
 
     <div class="c-cards__card">
         <div class="c-cards__card__description">
-            <img src="../../../../assets/images/icons/history.svg" />
+            <img src="assets/images/icons/history.svg" />
             <span>Faturas Vencidas</span>
         </div>
         <div class="c-cards__card__value">
@@ -33,6 +33,7 @@
 <div class="table mt-4">
     <div class="table__title">
         <h3>Unidades Consumidoras</h3>
+        <button (click)="addUnidade = true" class="is-primary">Adicionar</button>
     </div>
     <div class="table__content">   
         
@@ -59,7 +60,7 @@
                     <td>{{unidade.createdAt}}</td>
                     <td>{{unidade.updatedAt}}</td>
                     <td>
-                        <img src="../../../../assets/images/icons/trash.svg" title="Excluir"
+                        <img src="assets/images/icons/trash.svg" title="Excluir"
                             style="cursor: pointer;" (click)="deleteUnidade(unidade)" />
                     </td>
                 </tr>
@@ -103,5 +104,5 @@
     </div>
 </div>
 
-<app-unidade-modal>
+<app-unidade-modal *ngIf="addUnidade" (submitButton)="getAllUnidades()" (onCloseModal)="addUnidade = false">
 </app-unidade-modal>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { UnidadeConsumidora } from '@src/app/core/models/unidade-consumidora.model';
 import { UnidadeConsumidoraService } from '@src/app/shared/services';
 import { FormGroup, FormControl } from '@angular/forms';
@@ -11,6 +11,9 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class UnidadeModalComponent implements OnInit {
   unidade: UnidadeConsumidora;
   formUnidade: FormGroup;
+
+  @Output() submitButton = new EventEmitter();
+  @Output() onCloseModal = new EventEmitter();
 
   constructor(private unidadeConsumidoraService: UnidadeConsumidoraService) { }
 
@@ -34,6 +37,8 @@ export class UnidadeModalComponent implements OnInit {
   submit(){
     this.unidadeConsumidoraService.add(this.formUnidade.value).subscribe(
       (response) => {
+        this.formUnidade.reset();
+        this.submitButton.emit();
         console.log(response)
       },
       (error) => {
@@ -52,6 +57,10 @@ export class UnidadeModalComponent implements OnInit {
     }
 
     console.log(input.parentNode)
+  }
+
+  closeModal(){
+    this.onCloseModal.emit();
   }
 
 }

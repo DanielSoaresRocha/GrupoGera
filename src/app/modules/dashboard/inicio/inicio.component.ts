@@ -15,6 +15,7 @@ import { map } from 'rxjs/operators';
 export class InicioComponent implements OnInit {
   unidades: UnidadeConsumidora[] = [];
   faturas: Fatura[] = [];
+  addUnidade = false;
 
   constructor(
     private unidadeConsumidoraService: UnidadeConsumidoraService,
@@ -36,7 +37,8 @@ export class InicioComponent implements OnInit {
     )
   }
 
-  private getAllUnidades(){
+  getAllUnidades(){
+    this.addUnidade = false;
     this.unidadeConsumidoraService.getAll()
       .subscribe(
         unidades => {
@@ -59,7 +61,6 @@ export class InicioComponent implements OnInit {
     this.unidadeConsumidoraService.delete(unidade).subscribe(
       () => {
         this.getAllUnidades();
-        alert(`${unidade.nome} foi excluída com sucesso!`)
       }
     )
   }
