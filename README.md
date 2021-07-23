@@ -14,7 +14,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Organização dos assets
 - Configuração de environment
 - Criação dos serviços e models
-- tsConfig
+- TsConfig
+- Componetização (Separar responsabilidades)
 
 ## Development server
 

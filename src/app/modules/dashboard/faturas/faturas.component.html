@@ -1,0 +1,33 @@
+<div class="table" style="border-color: #37c293;">
+    <div class="table__title" style="background-color: #37c293;">
+        <h3>Faturas</h3>
+    </div>
+    <div class="table__content">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Consumo</th>
+                    <th>Valor</th>
+                    <th>Unidade</th>
+                    <th>Data de vencimento</th>
+                    <th>Criado em</th>
+                    <th>Atualizado em</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let fatura of faturas">
+                    <td>{{fatura.id}}</td>
+                    <td>{{fatura.consumo}}</td>
+                    <td>{{formatValue(fatura.valor)}}</td>
+                    <td>{{fatura.unidadeConsumidoraId}}</td>
+                    <td>{{fatura.data_de_vencimento}}</td>
+                    <td>{{fatura.createdAt}}</td>
+                    <td>{{fatura.updatedAt}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>

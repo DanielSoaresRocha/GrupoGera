@@ -5,7 +5,9 @@
             <span>Unidades Consumidoras</span>
         </div>
         <div class="c-cards__card__value">
-            <span>{{unidades.length}}</span>
+            <ng-container *ngIf="unidades$ | async as unidades">
+                <span>{{unidades.length}}</span>
+            </ng-container>
         </div>
     </div>
 
@@ -15,7 +17,9 @@
             <span>Total de Faturas</span>
         </div>
         <div class="c-cards__card__value">
-            <span>{{faturas.length}}</span>
+            <ng-container *ngIf="faturas$ | async as faturas">
+                <span>{{faturas.length}}</span>
+            </ng-container>
         </div>
     </div>
 
@@ -29,86 +33,3 @@
         </div>
     </div>
 </div>
-
-<div class="table mt-4">
-    <div class="table__title">
-        <h3>Unidades Consumidoras</h3>
-        <button (click)="addUnidade = true" class="is-primary">Adicionar</button>
-    </div>
-    <div class="table__content">   
-        
-        <table>
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Nome</th>
-                    <th>Distribuidora</th>
-                    <th>Número</th>
-                    <th>Endereço</th>
-                    <th>Criado em</th>
-                    <th>Atualizado em</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let unidade of unidades">
-                    <td>{{unidade.id}}</td>
-                    <td>{{unidade.nome}}</td>
-                    <td>{{unidade.distribuidora}}</td>
-                    <td>{{unidade.numero}}</td>
-                    <td>{{unidade.endereco}}</td>
-                    <td>{{unidade.createdAt}}</td>
-                    <td>{{unidade.updatedAt}}</td>
-                    <td>
-                        <img src="assets/images/icons/edit.svg" title="Editar"
-                        style="cursor: pointer;" (click)="editUnidade(unidade)" />
-                        <img src="assets/images/icons/trash.svg" title="Excluir"
-                            style="cursor: pointer;" (click)="deleteUnidade(unidade)" />
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    
-    </div>
-</div>
-
-<div class="table mt-4" style="border-color: #37c293;">
-    <div class="table__title" style="background-color: #37c293;">
-        <h3>Faturas</h3>
-    </div>
-    <div class="table__content">
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Consumo</th>
-                    <th>Valor</th>
-                    <th>Unidade</th>
-                    <th>Data de vencimento</th>
-                    <th>Criado em</th>
-                    <th>Atualizado em</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let fatura of faturas">
-                    <td>{{fatura.id}}</td>
-                    <td>{{fatura.consumo}}</td>
-                    <td>{{formatValue(fatura.valor)}}</td>
-                    <td>{{fatura.unidadeConsumidoraId}}</td>
-                    <td>{{fatura.data_de_vencimento}}</td>
-                    <td>{{fatura.createdAt}}</td>
-                    <td>{{fatura.updatedAt}}</td>
-                </tr>
-            </tbody>
-        </table>
-
-    </div>
-</div>
-
-<app-unidade-modal
-    *ngIf="addUnidade"
-    [unidade]="unidade"
-    (submitButton)="getAllUnidades()"
-    (onCloseModal)="closeModal()">
-</app-unidade-modal>
