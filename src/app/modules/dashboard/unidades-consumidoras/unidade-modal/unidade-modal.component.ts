@@ -24,7 +24,7 @@ export class UnidadeModalComponent implements OnInit, AfterViewInit {
   }
   
   ngAfterViewInit (): void {
-    document.getElementById('modal').querySelectorAll('input').forEach((element) => {
+    document.getElementById('modal-unidade').querySelectorAll('input').forEach((element) => {
       if(element.value.length)
         element.classList.add('has-content')
     })

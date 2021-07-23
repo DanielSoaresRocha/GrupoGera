@@ -14,4 +14,16 @@ export class FaturaService {
   getAll(): Observable<Fatura[]>{
     return this.httpClient.get<Fatura[]>(`${env.baseUrl}/fatura`);
   }
+
+  add(fatura: Fatura): Observable<Fatura>{
+    return this.httpClient.post<Fatura>(`${env.baseUrl}fatura`, fatura);
+  }
+
+  delete(Fatura: Fatura): Observable<Fatura>{
+    return this.httpClient.delete<Fatura>(`${env.baseUrl}fatura/${Fatura.id}`);
+  }
+
+  update(fatura: Fatura, idFatura: number): Observable<Fatura>{
+    return this.httpClient.put<Fatura>(`${env.baseUrl}fatura/${idFatura}`, fatura);
+  }
 }

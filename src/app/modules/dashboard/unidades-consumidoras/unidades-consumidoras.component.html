@@ -1,7 +1,7 @@
 <div class="table">
     <div class="table__title">
         <h3>Unidades Consumidoras</h3>
-        <button (click)="addUnidade = true" class="is-primary">Adicionar</button>
+        <button (click)="addUnidade = true" class="is-sucess">Adicionar</button>
     </div>
     <div class="table__content">
 
@@ -28,10 +28,9 @@
                     <td>{{unidade.createdAt}}</td>
                     <td>{{unidade.updatedAt}}</td>
                     <td>
-                        <img src="assets/images/icons/edit.svg" title="Editar" style="cursor: pointer;"
-                            (click)="editUnidade(unidade)" />
-                        <img src="assets/images/icons/trash.svg" title="Excluir" style="cursor: pointer;"
-                            (click)="deleteUnidade(unidade)" />
+                        <img src="assets/images/icons/plus.svg" title="Adicionar Fatura" (click)="adicionarFatura(unidade)" />
+                        <img src="assets/images/icons/edit.svg" title="Editar" (click)="editUnidade(unidade)" />
+                        <img src="assets/images/icons/trash.svg" title="Excluir" (click)="deleteUnidade(unidade)" />
                     </td>
                 </tr>
             </tbody>
@@ -46,3 +45,10 @@
     (submitButton)="getAllUnidades()"
     (onCloseModal)="closeModal()">
 </app-unidade-modal>
+
+<app-fatura-modal
+    *ngIf="addFatura"
+    [fatura]="fatura"
+    (submitButton)="getAllUnidades()"
+    (onCloseModal)="closeModal()">
+</app-fatura-modal>

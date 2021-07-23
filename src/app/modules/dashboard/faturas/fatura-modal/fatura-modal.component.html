@@ -1,0 +1,40 @@
+<div class="m-modal" id="modal-fatura">
+    <div class="m-modal__backdrop" (click)="closeModal()"></div>
+
+    <div class="m-modal__content">
+        <div class="m-modal__content__header">
+            <h2>{{fatura.id ? 'Editar' : 'Adicionar'}} Fatura</h2>
+        </div>
+        <div class="m-modal__content__body">
+            <form [formGroup]="formFatura">
+                <div style="display: flex;" class="mt-3">
+                    <div class="c-form-group is-normal">
+                        <div class="c-form-group__input">
+                            <input (blur)="onBlur($event)" name="consumo" id="consumo" formControlName="consumo" />
+                            <label>Consumo</label>
+                        </div>
+                        <div class="c-form-group__line"></div>
+
+                        <div class="c-form-group__input">
+                            <input (blur)="onBlur($event)" name="valor" id="valor" formControlName="valor" />
+                            <label>Valor</label>
+                        </div>
+                        <div class="c-form-group__line"></div>
+                    </div>
+
+                    <div class="c-form-group is-normal" style="margin-left: 1.5rem;">
+                        <div class="c-form-group__input">
+                            <input (blur)="onBlur($event)" name="data de vencimento" id="data_de_vencimento" formControlName="data_de_vencimento" />
+                            <label>Data de Vencimento</label>
+                        </div>
+                        <div class="c-form-group__line"></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="m-modal__content__footer">
+            <button (click)="submit()" class="btn is-sucess">{{fatura.id ? 'Atualizar' : 'Cadastrar'}}</button>
+            <button (click)="closeModal()" class="btn is-danger">Cancelar</button>
+        </div>
+    </div>
+</div>

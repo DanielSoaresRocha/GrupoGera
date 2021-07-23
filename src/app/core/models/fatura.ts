@@ -1,4 +1,4 @@
-export interface Fatura {
+export class Fatura {
     consumo: number;
     createdAt: string;
     data_de_vencimento: string;

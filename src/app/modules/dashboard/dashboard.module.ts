@@ -7,13 +7,15 @@ import { UnidadeModalComponent } from './unidades-consumidoras/unidade-modal/uni
 import { SharedModule } from '@src/app/shared';
 import { UnidadesConsumidorasComponent } from './unidades-consumidoras/unidades-consumidoras.component';
 import { FaturasComponent } from './faturas/faturas.component';
+import { FaturaModalComponent } from './faturas/fatura-modal/fatura-modal.component';
 
 @NgModule({
   declarations: [
     InicioComponent,
     UnidadeModalComponent,
     UnidadesConsumidorasComponent,
-    FaturasComponent
+    FaturasComponent,
+    FaturaModalComponent
   ],
   imports: [
     CommonModule,

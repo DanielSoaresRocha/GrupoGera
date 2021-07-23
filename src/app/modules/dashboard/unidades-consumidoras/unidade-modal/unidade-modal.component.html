@@ -1,9 +1,9 @@
-<div class="m-modal" id="modal">
+<div class="m-modal" id="modal-unidade">
     <div class="m-modal__backdrop" (click)="closeModal()"></div>
 
     <div class="m-modal__content">
     <div class="m-modal__content__header">
-        <h2>Adicionar Unidade Consumidora</h2>
+        <h2>{{unidade.id ? 'Editar' : 'Adicionar'}} Unidade Consumidora</h2>
     </div>
     <div class="m-modal__content__body">
         <form [formGroup]="formUnidade">

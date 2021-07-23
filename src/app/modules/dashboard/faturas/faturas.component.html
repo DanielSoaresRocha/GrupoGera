@@ -14,6 +14,7 @@
                     <th>Data de vencimento</th>
                     <th>Criado em</th>
                     <th>Atualizado em</th>
+                    <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
@@ -25,9 +26,20 @@
                     <td>{{fatura.data_de_vencimento}}</td>
                     <td>{{fatura.createdAt}}</td>
                     <td>{{fatura.updatedAt}}</td>
+                    <td>
+                        <img src="assets/images/icons/edit.svg" title="Editar" (click)="editFatura(fatura)" />
+                        <img src="assets/images/icons/trash.svg" title="Excluir" (click)="deleteFatura(fatura)" />
+                    </td>
                 </tr>
             </tbody>
         </table>
 
     </div>
 </div>
+
+<app-fatura-modal
+    *ngIf="showModalFatura"
+    [fatura]="fatura"
+    (submitButton)="getAllFaturas()"
+    (onCloseModal)="closeModal()">
+</app-fatura-modal>

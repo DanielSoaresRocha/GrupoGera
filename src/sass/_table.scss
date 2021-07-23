@@ -32,9 +32,12 @@
           padding: 12px;
           border-bottom: 1px solid #cbc8c8;
           &:last-child {
-            display: flex;
-            justify-content: center;
-            column-gap: 8px;
+            img {
+              cursor: pointer;
+              & + img {
+                margin-left: 8px;
+              }
+            }
           }
         }
         &:hover {

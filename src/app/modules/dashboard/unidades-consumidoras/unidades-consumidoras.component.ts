@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Fatura } from '@src/app/core/models/fatura';
 import { UnidadeConsumidora } from '@src/app/core/models/unidade-consumidora.model';
 import { UnidadeConsumidoraService } from '@src/app/shared/services';
 
@@ -9,8 +10,11 @@ import { UnidadeConsumidoraService } from '@src/app/shared/services';
 })
 export class UnidadesConsumidorasComponent implements OnInit {
   unidade: UnidadeConsumidora = new UnidadeConsumidora();
+  fatura: Fatura = new Fatura();
   unidades: UnidadeConsumidora[] = [];
+
   addUnidade: boolean = false;
+  addFatura: boolean = false;
   
   constructor(private unidadeConsumidoraService: UnidadeConsumidoraService) { }
 
@@ -49,7 +53,16 @@ export class UnidadesConsumidorasComponent implements OnInit {
 
   closeModal(){
     this.unidade = new UnidadeConsumidora();
+    this.fatura = new Fatura();
     this.addUnidade = false;
+    this.addFatura = false;
+  }
+
+  adicionarFatura(unidade: UnidadeConsumidora){
+    this.fatura = new Fatura();
+    this.fatura.unidadeConsumidoraId = unidade.id;
+
+    this.addFatura = true;
   }
 
 }
