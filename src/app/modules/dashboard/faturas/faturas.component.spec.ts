@@ -1,3 +1,4 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FaturasComponent } from './faturas.component';
@@ -8,7 +9,8 @@ describe('FaturasComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FaturasComponent ]
+      declarations: [ FaturasComponent ],
+      imports: [ HttpClientTestingModule ]
     })
     .compileComponents();
   });

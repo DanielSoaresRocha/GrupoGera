@@ -10,15 +10,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Services
-import { UnidadeConsumidoraService, FaturaService } from '@src/app/shared/services'
-import { InputDirective } from '../core/directives/input.directive';
+import { UnidadeConsumidoraService, FaturaService } from '@src/app/shared/services';
 
 @NgModule({
   declarations: [
     LayoutComponent,
     NavbarComponent,
-    SidebarComponent,
-    InputDirective
+    SidebarComponent
   ],
   imports: [
     CommonModule,
@@ -33,8 +31,7 @@ import { InputDirective } from '../core/directives/input.directive';
   ],
   exports: [
     ReactiveFormsModule,
-    FormsModule,
-    InputDirective
+    FormsModule
   ]
 })
 export class SharedModule { }

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange, SimpleChanges } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { UnidadeConsumidora } from '@src/app/core/models/unidade-consumidora.model';
 import { UnidadeConsumidoraService } from '@src/app/shared/services';
 import { FormGroup, FormControl } from '@angular/forms';

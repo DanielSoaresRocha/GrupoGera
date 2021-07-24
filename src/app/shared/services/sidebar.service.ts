@@ -6,9 +6,9 @@ import { Observable, Subject } from 'rxjs';
 })
 export class SidebarService {
   private sidebar = new Subject<boolean>();
-  
+
   toggleSideBar(toggle: boolean){
-    this.sidebar.next(toggle)
+    this.sidebar.next(toggle);
   }
 
   sideBarObserver(): Observable<boolean>{

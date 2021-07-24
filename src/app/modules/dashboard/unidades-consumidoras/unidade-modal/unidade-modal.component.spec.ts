@@ -1,4 +1,7 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { UnidadeConsumidoraService } from '@src/app/shared/services';
 
 import { UnidadeModalComponent } from './unidade-modal.component';
 
@@ -8,7 +11,9 @@ describe('UnidadeModalComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UnidadeModalComponent ]
+      declarations: [ UnidadeModalComponent ],
+      providers: [ UnidadeConsumidoraService ],
+      imports: [ RouterTestingModule, HttpClientTestingModule]
     })
     .compileComponents();
   });

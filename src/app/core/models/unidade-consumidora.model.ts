@@ -1,4 +1,4 @@
-import { Fatura } from "./fatura";
+import { Fatura } from './fatura';
 
 export class UnidadeConsumidora{
     createdAt: string;

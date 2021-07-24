@@ -23,7 +23,7 @@ export class FaturaModalComponent implements OnInit {
     this.submitButton.emit();
   }
   
-  ngAfterViewInit (): void {
+  ngAfterViewInit(): void {
     document.getElementById('modal-fatura').querySelectorAll('input').forEach((element) => {
       if(element.value.length)
         element.classList.add('has-content')

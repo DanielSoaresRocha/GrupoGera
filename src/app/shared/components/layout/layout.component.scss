@@ -6,6 +6,7 @@ section {
   main {
     width: 100%;
     padding: 3rem;
+    background-color: #f7f8f9;
     @include mobile-down {
       padding: 1rem;
     }

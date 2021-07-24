@@ -16,11 +16,9 @@ export class LoginComponent implements OnInit {
     let input = element.target as HTMLInputElement;
 
     if(input.value.length){
-      input.classList.add('has-content')
+      input.classList.add('has-content');
     }else{
-      input.classList.remove('has-content')
+      input.classList.remove('has-content');
     }
-
-    console.log(input.parentNode)
   }
 }

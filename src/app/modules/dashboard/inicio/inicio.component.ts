@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 interface UnidadesGraphic{
   unidade: string;
   mediaConsumo: number;
+  color?: string;
 }
 
 @Component({
@@ -33,6 +34,10 @@ export class InicioComponent implements OnInit {
     this.unidades$ = this.unidadeConsumidoraService.getAll();
     this.faturas$ = this.faturaService.getAll();
 
+    this.gerarDadosGrafico();
+  }
+
+  gerarDadosGrafico(){
     this.unidades$.subscribe(
       (unidades: UnidadeConsumidora[]) => {
         let unidadesConsumo = [];
@@ -51,13 +56,13 @@ export class InicioComponent implements OnInit {
           })
         })
 
-        this.gerarGrafico();
+        this.gerarEixoX();
         this.unidadesConsumo = unidadesConsumo;
-      }
-    )
+        this.paintGraphic();
+      })
   }
 
-  gerarGrafico(){
+  gerarEixoX(){
     let interator = this.maiorConsumo/5;
     let anterior = 0;
 
@@ -74,5 +79,25 @@ export class InicioComponent implements OnInit {
     return ((value * 100)/ this.maiorConsumo).toFixed(0);
   }
 
+  paintGraphic(){
+    let color = 0;
+
+    this.unidadesConsumo.forEach((bar) => {
+      color += 1;
+
+      if(color == 1){
+        bar.color = '#9699D1'
+      }else if(color == 2){
+        bar.color = "#54E8BF";
+      }else if(color == 3){
+        bar.color = "#FCBBBF";
+      }else if(color == 4){
+        bar.color = "#FFD076";
+      }
+
+      if(color % 4 == 0)
+					color = 0;
+    })
+  }
 
 }

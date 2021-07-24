@@ -1,25 +1,25 @@
-import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router";
-import { FaturasComponent } from "./faturas/faturas.component";
-import { InicioComponent } from "./inicio";
-import { UnidadesConsumidorasComponent } from "./unidades-consumidoras/unidades-consumidoras.component";
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { FaturasComponent } from './faturas/faturas.component';
+import { InicioComponent } from './inicio';
+import { UnidadesConsumidorasComponent } from './unidades-consumidoras/unidades-consumidoras.component';
 
 const routes: Routes = [
   {
-    path: "",
-    redirectTo: "dashboard",
+    path: '',
+    redirectTo: 'dashboard',
     pathMatch: 'full'
   },
   {
-    path: "dashboard",
+    path: 'dashboard',
     component: InicioComponent
   },
   {
-    path: "unidades",
+    path: 'unidades',
     component: UnidadesConsumidorasComponent
   },
   {
-    path: "faturas",
+    path: 'faturas',
     component: FaturasComponent
   }
 ];
