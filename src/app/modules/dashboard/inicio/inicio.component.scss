@@ -62,3 +62,62 @@
     }
   }
 }
+
+.graphic {
+  width: 100%;
+  background: #f2f2f2;
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgb(0 0 0 / 50%);
+  border-radius: 7px;
+  overflow-x: auto;
+  &__data {
+    display: flex;
+    min-width: 625px;
+  }
+  &__units {
+    width: 30%;
+    max-width: 150px;
+  }
+  &__unit,
+  &__bar {
+    height: 38px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__consumed {
+    width: calc(100% - 162px);
+  }
+  &__sub-bar {
+    height: 12px;
+    background-color: $info;
+    border-radius: 8px;
+  }
+  &__footer {
+    display: flex;
+    min-width: 625px;
+    & > div:first-child {
+      width: 30%;
+      max-width: 150px;
+    }
+  }
+  &__scale {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    span {
+      position: relative;
+      &:before {
+        content: "";
+        height: 163px;
+        position: absolute;
+        bottom: 32px;
+        z-index: 1;
+        border: 1px dotted #cacaca;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}
