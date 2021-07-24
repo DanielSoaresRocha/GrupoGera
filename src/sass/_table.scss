@@ -14,9 +14,11 @@
   }
   &__content {
     padding: 8px 20px 8px 20px;
+    overflow-x: auto;
     table {
       border-collapse: collapse;
       width: 100%;
+      min-width: 920px;
       thead tr {
         border-bottom: 2px solid #aa9d9d;
         th {

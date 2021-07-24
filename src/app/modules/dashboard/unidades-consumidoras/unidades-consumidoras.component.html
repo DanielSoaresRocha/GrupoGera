@@ -1,7 +1,7 @@
 <div class="table">
     <div class="table__title">
         <h3>Unidades Consumidoras</h3>
-        <button (click)="addUnidade = true" class="is-sucess">Adicionar</button>
+        <button (click)="showModalUnidade = true" class="is-sucess">Adicionar</button>
     </div>
     <div class="table__content">
 
@@ -40,14 +40,14 @@
 </div>
 
 <app-unidade-modal
-    *ngIf="addUnidade"
+    *ngIf="showModalUnidade"
     [unidade]="unidade"
     (submitButton)="getAllUnidades()"
     (onCloseModal)="closeModal()">
 </app-unidade-modal>
 
 <app-fatura-modal
-    *ngIf="addFatura"
+    *ngIf="showModalFatura"
     [fatura]="fatura"
     (submitButton)="getAllUnidades()"
     (onCloseModal)="closeModal()">

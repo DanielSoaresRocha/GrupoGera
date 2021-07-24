@@ -47,4 +47,23 @@
       background-color: $primary;
     }
   }
+  @include mobile-down {
+    & + .c-form-group {
+      margin-top: 20px;
+    }
+  }
+
+  @media (min-width: 600px) {
+    & + .c-form-group {
+      margin-left: 20px;
+    }
+  }
+}
+
+.group-forms {
+  display: flex;
+
+  @include mobile-down {
+    flex-direction: column;
+  }
 }

@@ -1,7 +1,13 @@
+@import "../../../../sass/mixins";
+
 section {
   display: flex;
   min-height: 90vh;
   main {
     width: 100%;
+    padding: 3rem;
+    @include mobile-down {
+      padding: 1rem;
+    }
   }
 }

@@ -27,4 +27,8 @@
   &:not(.show) {
     margin-left: -280px;
   }
+  @media (max-width: 1024px) {
+    position: absolute;
+    max-width: 65%;
+  }
 }

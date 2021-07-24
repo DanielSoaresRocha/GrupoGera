@@ -13,8 +13,8 @@ export class UnidadesConsumidorasComponent implements OnInit {
   fatura: Fatura = new Fatura();
   unidades: UnidadeConsumidora[] = [];
 
-  addUnidade: boolean = false;
-  addFatura: boolean = false;
+  showModalUnidade: boolean = false;
+  showModalFatura: boolean = false;
   
   constructor(private unidadeConsumidoraService: UnidadeConsumidoraService) { }
 
@@ -23,7 +23,8 @@ export class UnidadesConsumidorasComponent implements OnInit {
   }
 
   getAllUnidades(){
-    this.addUnidade = false;
+    this.showModalUnidade = false;
+    this.showModalFatura = false;
     this.unidadeConsumidoraService.getAll()
       .subscribe(
         unidades => {
@@ -37,7 +38,7 @@ export class UnidadesConsumidorasComponent implements OnInit {
 
   editUnidade(unidade: UnidadeConsumidora){
     this.unidade = unidade;
-    this.addUnidade = true;
+    this.showModalUnidade = true;
   }
 
   deleteUnidade(unidade: UnidadeConsumidora){
@@ -54,15 +55,15 @@ export class UnidadesConsumidorasComponent implements OnInit {
   closeModal(){
     this.unidade = new UnidadeConsumidora();
     this.fatura = new Fatura();
-    this.addUnidade = false;
-    this.addFatura = false;
+    this.showModalUnidade = false;
+    this.showModalFatura = false;
   }
 
   adicionarFatura(unidade: UnidadeConsumidora){
     this.fatura = new Fatura();
     this.fatura.unidadeConsumidoraId = unidade.id;
 
-    this.addFatura = true;
+    this.showModalFatura = true;
   }
 
 }

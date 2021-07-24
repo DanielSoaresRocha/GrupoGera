@@ -18,6 +18,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    animation: modal 1s;
     &__header {
       h2 {
         padding: 20px;
@@ -38,5 +39,22 @@
         margin-left: 10px;
       }
     }
+  }
+}
+
+@include mobile-down {
+  .m-modal__content {
+    max-width: 90%;
+  }
+}
+
+@keyframes modal {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -70%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
   }
 }

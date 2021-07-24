@@ -7,16 +7,18 @@ import { SidebarService } from '@src/app/shared/services/sidebar.service';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  showSideBar = false;
+  showSideBar = true;
 
   constructor(private sidebarService: SidebarService) { }
 
   ngOnInit(): void {
+    this.sidebarService.sideBarObserver().subscribe(show => { 
+      this.showSideBar = show;
+    });
   }
 
   toggleSidebar(){
-    this.sidebarService.toggleSideBar(this.showSideBar);
-    this.showSideBar = !this.showSideBar;
+    this.sidebarService.toggleSideBar(!this.showSideBar);
   }
 
 }

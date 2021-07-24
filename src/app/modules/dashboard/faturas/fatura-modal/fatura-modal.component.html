@@ -7,7 +7,7 @@
         </div>
         <div class="m-modal__content__body">
             <form [formGroup]="formFatura">
-                <div style="display: flex;" class="mt-3">
+                <div class="mt-3 group-forms">
                     <div class="c-form-group is-normal">
                         <div class="c-form-group__input">
                             <input (blur)="onBlur($event)" name="consumo" id="consumo" formControlName="consumo" />
@@ -22,7 +22,7 @@
                         <div class="c-form-group__line"></div>
                     </div>
 
-                    <div class="c-form-group is-normal" style="margin-left: 1.5rem;">
+                    <div class="c-form-group is-normal">
                         <div class="c-form-group__input">
                             <input (blur)="onBlur($event)" name="data de vencimento" id="data_de_vencimento" formControlName="data_de_vencimento" />
                             <label>Data de Vencimento</label>

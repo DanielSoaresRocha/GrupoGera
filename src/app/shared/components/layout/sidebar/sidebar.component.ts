@@ -1,4 +1,5 @@
 import { Component, OnInit} from '@angular/core';
+import { Router } from '@angular/router';
 import { SidebarService } from '@src/app/shared/services/sidebar.service';
 
 @Component({
@@ -11,7 +12,8 @@ export class SidebarComponent implements OnInit {
   showSideBar = true;
 
   constructor(
-    private sidebarService: SidebarService
+    private sidebarService: SidebarService,
+    private router: Router
     ) {
 
     this.sidebarService.sideBarObserver().subscribe(show => { 
@@ -22,7 +24,15 @@ export class SidebarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  changeView(view: number){
+  changeView(view: number, router: string){
+    this.router.navigate([`/home/${router}/`]);
     this.activeView = view;
+    
+    this.verifyMobile();
+  }
+
+  verifyMobile(){
+    if(window.innerWidth < 600)
+      this.sidebarService.toggleSideBar(false);
   }
 }

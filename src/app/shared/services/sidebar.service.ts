@@ -9,7 +9,6 @@ export class SidebarService {
   
   toggleSideBar(toggle: boolean){
     this.sidebar.next(toggle)
-    
   }
 
   sideBarObserver(): Observable<boolean>{

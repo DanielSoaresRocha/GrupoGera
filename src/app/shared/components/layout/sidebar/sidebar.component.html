@@ -1,14 +1,14 @@
 <nav class="c-sidebar show" [ngClass]="{'show': showSideBar}">
     <ul>
-        <li [ngClass]="{'is-active': activeView == 1}" (click)="changeView(1)" [routerLink]="['/home/dashboard']">
+        <li [ngClass]="{'is-active': activeView == 1}" (click)="changeView(1, 'dashboard')">
             <img src="assets/images/icons/home.svg"/>
             <a >Dashboard</a>
         </li>
-        <li [ngClass]="{'is-active': activeView == 2}" (click)="changeView(2)" [routerLink]="['/home/unidades']">
+        <li [ngClass]="{'is-active': activeView == 2}" (click)="changeView(2, 'unidades')">
             <img src="assets/images/icons/home.svg" />
             <a>Unidades</a>
         </li>
-        <li [ngClass]="{'is-active': activeView == 3}" (click)="changeView(3)" [routerLink]="['/home/faturas']">
+        <li [ngClass]="{'is-active': activeView == 3}" (click)="changeView(3, 'faturas')">
             <img src="assets/images/icons/home.svg" />
             <a>Faturas</a>
         </li>
