@@ -32,7 +32,7 @@ export class SidebarComponent implements OnInit {
   }
 
   verifyMobile(){
-    if(window.innerWidth < 600)
+    if(window.innerWidth < 1024)
       this.sidebarService.toggleSideBar(false);
   }
 }

@@ -1,3 +1,5 @@
+@import "../../../../../sass/mixins";
+
 .c-sidebar {
   width: 17.5rem;
   min-height: 100%;
@@ -6,6 +8,7 @@
   transform: translateY(0px);
   padding: 1.25rem;
   transition: 0.6s;
+  z-index: 10;
   li {
     border-radius: 10px;
     padding: 6px 20px;
@@ -27,7 +30,7 @@
   &:not(.show) {
     margin-left: -280px;
   }
-  @media (max-width: 1024px) {
+  @include tablet-down {
     position: absolute;
     max-width: 65%;
   }

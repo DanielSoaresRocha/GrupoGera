@@ -1,0 +1,101 @@
+@import "../../../../../sass/variables";
+
+.graphic {
+  width: 100%;
+  background: white;
+  box-shadow: 0px 4px 10px rgb(0 0 0 / 50%);
+  border: 2px solid $info;
+  border-radius: 7px;
+  overflow-x: auto;
+  &__title {
+    background-color: #319bd7;
+    color: white;
+    padding: 10px 20px;
+    height: 62px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  &__content {
+    height: 202px;
+    overflow-y: scroll;
+    min-width: 625px;
+    margin: 0 20px;
+    &::-webkit-scrollbar {
+      width: 0.625rem;
+      height: 0.625rem;
+    }
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 0.375rem;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #c1c1c1;
+      border-radius: 0.375rem;
+    }
+  }
+  &__data {
+    display: flex;
+  }
+  &__units {
+    width: 30%;
+    max-width: 150px;
+    font-weight: bold;
+  }
+  &__unit,
+  &__bar {
+    height: 38px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  &__consumed {
+    width: 100%;
+  }
+  &__sub-bar {
+    height: 12px;
+    background-color: $info;
+    border-radius: 8px;
+    position: relative;
+    span {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-weight: bold;
+      right: 0;
+      border: 1px solid $info;
+      background: $info;
+      color: white;
+      padding: 2px;
+      border-radius: 5px;
+      z-index: 2;
+    }
+  }
+  &__footer {
+    display: flex;
+    min-width: 625px;
+    margin: 20px;
+    & > div:first-child {
+      width: 30%;
+      max-width: 150px;
+    }
+  }
+  &__scale {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    span {
+      position: relative;
+      &:before {
+        content: "";
+        height: 163px;
+        position: absolute;
+        bottom: 32px;
+        z-index: 1;
+        border: 1px dotted #cacaca;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}

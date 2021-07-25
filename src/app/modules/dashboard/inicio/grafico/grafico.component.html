@@ -1,0 +1,31 @@
+<div class="graphic mt-4">
+    <div class="graphic__title">
+        <h3>Unidades: Média de consumo</h3>
+    </div>
+    <div style="overflow-x: auto;">
+        <div class="graphic__content">
+            <div class="graphic__data" *ngFor="let unidade of unidadesConsumo">
+                <div class="graphic__units">
+                    <div class="graphic__unit">
+                        <span>{{unidade.unidade}}</span>
+                    </div>
+                </div>
+                <div class="graphic__consumed">
+                    <div class="graphic__bar">
+                        <div class="graphic__sub-bar" [ngStyle]="{'width':'calc(' +calcularPorcentagem(unidade.mediaConsumo) + '% + 0px)',
+                                    'backgroundColor': unidade.color}">
+                            <span>{{unidade.mediaConsumo}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="graphic__footer">
+            <div></div>
+            <div class="graphic__scale">
+                <span>0</span>
+                <span *ngFor="let consumo of consumos">{{consumo}}</span>
+            </div>
+        </div>
+    </div>
+</div>
