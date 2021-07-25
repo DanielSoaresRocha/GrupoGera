@@ -16,6 +16,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Criação dos serviços e models
 - TsConfig
 - Componetização (Separar responsabilidades)
+- Refatoração e melhorias
 
 ## Development server
 
