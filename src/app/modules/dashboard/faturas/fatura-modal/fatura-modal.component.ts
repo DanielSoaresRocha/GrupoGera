@@ -22,13 +22,6 @@ export class FaturaModalComponent implements OnInit {
     this.formFatura.reset();
     this.submitButton.emit();
   }
-  
-  ngAfterViewInit(): void {
-    document.getElementById('modal-fatura').querySelectorAll('input').forEach((element) => {
-      if(element.value.length)
-        element.classList.add('has-content')
-    })
-  }
 
   ngOnInit(): void {
     this.createForm(this.fatura);
@@ -55,16 +48,6 @@ export class FaturaModalComponent implements OnInit {
     }
     
     this.faturaService.add(this.formFatura.value).subscribe(() => this.reset())
-  }
-
-  onBlur(element: FocusEvent){
-    let input = element.target as HTMLInputElement;
-
-    if(input.value.length){
-      input.classList.add('has-content')
-    }else{
-      input.classList.remove('has-content')
-    }
   }
 
   closeModal(){

@@ -10,12 +10,13 @@
       "c3 c3";
   }
 
-  @media (max-width: 941px) {
+  @media (max-width: 680px) {
     grid-template-areas:
       "c1"
       "c2"
       "c3";
   }
+
   &__card {
     height: 146px;
     width: 276px;

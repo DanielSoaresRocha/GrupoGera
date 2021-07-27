@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Fatura } from '@src/app/core/models/fatura';
 import { UnidadeConsumidora } from '@src/app/core/models/unidade-consumidora.model';
 import { UnidadeConsumidoraService } from '@src/app/shared/services';
@@ -13,10 +14,13 @@ export class UnidadesConsumidorasComponent implements OnInit {
   fatura: Fatura = new Fatura();
   unidades: UnidadeConsumidora[] = [];
 
-  showModalUnidade: boolean = false;
-  showModalFatura: boolean = false;
+  showModalUnidade: boolean;
+  showModalFatura: boolean;
   
-  constructor(private unidadeConsumidoraService: UnidadeConsumidoraService) { }
+  constructor(
+    private unidadeConsumidoraService: UnidadeConsumidoraService,
+    private router: Router,
+    ) { }
 
   ngOnInit(): void {
     this.getAllUnidades();
@@ -25,15 +29,7 @@ export class UnidadesConsumidorasComponent implements OnInit {
   getAllUnidades(){
     this.showModalUnidade = false;
     this.showModalFatura = false;
-    this.unidadeConsumidoraService.getAll()
-      .subscribe(
-        unidades => {
-          this.unidades = unidades.map((unidade: UnidadeConsumidora) => {
-            unidade.createdAt = new Date(unidade.createdAt).toLocaleDateString('pt-br');
-            unidade.updatedAt = new Date(unidade.updatedAt).toLocaleDateString('pt-br');
-            return unidade;
-          })
-      });
+    this.unidadeConsumidoraService.getAll().subscribe(unidades => this.unidades = unidades);
   }
 
   editUnidade(unidade: UnidadeConsumidora){
@@ -66,4 +62,7 @@ export class UnidadesConsumidorasComponent implements OnInit {
     this.showModalFatura = true;
   }
 
+  redirectFaturas(unidade: UnidadeConsumidora){
+    this.router.navigate(['/home/faturas/' + unidade.id]);
+  }
 }

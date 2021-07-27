@@ -12,11 +12,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // Services
 import { UnidadeConsumidoraService, FaturaService } from '@src/app/shared/services';
 
+// Utils
+import { FormatRealPipe } from './pipes';
+import { FormatDatePipe } from './pipes/format-date.pipe';
+import { InputFocusDirective } from './directives';
+
 @NgModule({
   declarations: [
     LayoutComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    FormatRealPipe,
+    FormatDatePipe,
+    InputFocusDirective
   ],
   imports: [
     CommonModule,
@@ -31,7 +39,10 @@ import { UnidadeConsumidoraService, FaturaService } from '@src/app/shared/servic
   ],
   exports: [
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    FormatRealPipe,
+    FormatDatePipe,
+    InputFocusDirective
   ]
 })
 export class SharedModule { }

@@ -8,7 +8,7 @@ import { FormGroup, FormControl } from '@angular/forms';
   templateUrl: './unidade-modal.component.html',
   styleUrls: ['./unidade-modal.component.scss']
 })
-export class UnidadeModalComponent implements OnInit, AfterViewInit {
+export class UnidadeModalComponent implements OnInit {
   formUnidade: FormGroup;
 
   @Input() unidade: UnidadeConsumidora = new UnidadeConsumidora();
@@ -21,13 +21,6 @@ export class UnidadeModalComponent implements OnInit, AfterViewInit {
   reset(){
     this.formUnidade.reset();
     this.submitButton.emit();
-  }
-  
-  ngAfterViewInit (): void {
-    document.getElementById('modal-unidade').querySelectorAll('input').forEach((element) => {
-      if(element.value.length)
-        element.classList.add('has-content')
-    })
   }
 
   ngOnInit(): void {
@@ -56,18 +49,7 @@ export class UnidadeModalComponent implements OnInit, AfterViewInit {
     this.unidadeConsumidoraService.add(this.formUnidade.value).subscribe(() => this.reset())
   }
 
-  onBlur(element: FocusEvent){
-    let input = element.target as HTMLInputElement;
-
-    if(input.value.length){
-      input.classList.add('has-content')
-    }else{
-      input.classList.remove('has-content')
-    }
-  }
-
   closeModal(){
     this.onCloseModal.emit();
   }
-
 }

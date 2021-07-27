@@ -21,6 +21,10 @@ const routes: Routes = [
   {
     path: 'faturas',
     component: FaturasComponent
+  },
+  {
+    path: 'faturas/:idUnidade',
+    component: FaturasComponent
   }
 ];
 

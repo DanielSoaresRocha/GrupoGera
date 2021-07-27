@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Fatura } from '@src/app/core/models/fatura';
-import { FaturaService } from '@src/app/shared/services';
+import { UnidadeConsumidora } from '@src/app/core/models/unidade-consumidora.model';
+import { FaturaService, UnidadeConsumidoraService } from '@src/app/shared/services';
 
 @Component({
   selector: 'app-faturas',
@@ -9,30 +11,37 @@ import { FaturaService } from '@src/app/shared/services';
 })
 export class FaturasComponent implements OnInit {
   faturas: Fatura[] = [];
+  unidades: UnidadeConsumidora[] = [];
+  idUnidade: number = 0;
+
   fatura: Fatura = new Fatura();
   showModalFatura = false;
   
-  constructor(private faturaService: FaturaService) { }
+  constructor(
+    private faturaService: FaturaService,
+    private unidadeConsumidoraService: UnidadeConsumidoraService,
+    private activatedRoute: ActivatedRoute
+    ) { }
 
   ngOnInit(): void {
-    this.getAllFaturas();
+    this.idUnidade = parseInt(this.activatedRoute.snapshot.paramMap.get('idUnidade'))
+    this.getAllUnidades();
   }
 
-  getAllFaturas(){
+  getAllUnidades(){
     this.showModalFatura = false;
-
-    this.faturaService.getAll().subscribe(
-      faturas => {
-        this.faturas = faturas.map((fatura: Fatura) => {
-            fatura.createdAt = new Date(fatura.createdAt).toLocaleDateString('pt-br');
-            fatura.updatedAt = new Date(fatura.updatedAt).toLocaleDateString('pt-br');
-            return fatura;
-          })
+    this.unidadeConsumidoraService.getAll().subscribe(
+      unidades => {
+        this.unidades = unidades;
+        if(this.idUnidade)
+          this.faturas = this.getUnidadeById(this.idUnidade).faturas;
+        else
+          this.getAllFaturas();
       })
   }
 
-  formatValue(value: number): string{
-    return value.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+  getAllFaturas(){
+    this.faturaService.getAll().subscribe(faturas => this.faturas = faturas);
   }
 
   deleteFatura(fatura: Fatura){
@@ -41,7 +50,7 @@ export class FaturasComponent implements OnInit {
 
     this.faturaService.delete(fatura).subscribe(
       () => {
-        this.getAllFaturas();
+        this.getAllUnidades();
       }
     )
   }
@@ -54,5 +63,17 @@ export class FaturasComponent implements OnInit {
   closeModal(){
     this.fatura = new Fatura();
     this.showModalFatura = false;
+  }
+
+  getUnidadeById(id: number): UnidadeConsumidora{
+    let unidade: UnidadeConsumidora = null;
+    
+    for(let u of this.unidades){
+      if(u.id === id){
+        unidade = u;
+        break;
+      }
+    }
+    return unidade;
   }
 }

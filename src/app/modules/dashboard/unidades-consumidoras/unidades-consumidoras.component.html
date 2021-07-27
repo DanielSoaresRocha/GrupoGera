@@ -25,9 +25,10 @@
                     <td>{{unidade.distribuidora}}</td>
                     <td>{{unidade.numero}}</td>
                     <td>{{unidade.endereco}}</td>
-                    <td>{{unidade.createdAt}}</td>
-                    <td>{{unidade.updatedAt}}</td>
+                    <td>{{unidade.createdAt | formatDate}}</td>
+                    <td>{{unidade.updatedAt | formatDate}}</td>
                     <td>
+                        <img src="assets/images/icons/invoice.svg" title="Visualizar Faturas" (click)="redirectFaturas(unidade)" />
                         <img src="assets/images/icons/plus.svg" title="Adicionar Fatura" (click)="adicionarFatura(unidade)" />
                         <img src="assets/images/icons/edit.svg" title="Editar" (click)="editUnidade(unidade)" />
                         <img src="assets/images/icons/trash.svg" title="Excluir" (click)="deleteUnidade(unidade)" />

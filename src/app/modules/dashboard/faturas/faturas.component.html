@@ -21,11 +21,11 @@
                 <tr *ngFor="let fatura of faturas">
                     <td>{{fatura.id}}</td>
                     <td>{{fatura.consumo}}</td>
-                    <td>{{formatValue(fatura.valor)}}</td>
-                    <td>{{fatura.unidadeConsumidoraId}}</td>
+                    <td>{{fatura.valor | formatReal}}</td>
+                    <td>{{getUnidadeById(fatura.unidadeConsumidoraId).nome}}</td>
                     <td>{{fatura.data_de_vencimento}}</td>
-                    <td>{{fatura.createdAt}}</td>
-                    <td>{{fatura.updatedAt}}</td>
+                    <td>{{fatura.createdAt | formatDate}}</td>
+                    <td>{{fatura.updatedAt | formatDate}}</td>
                     <td>
                         <img src="assets/images/icons/edit.svg" title="Editar" (click)="editFatura(fatura)" />
                         <img src="assets/images/icons/trash.svg" title="Excluir" (click)="deleteFatura(fatura)" />
@@ -40,6 +40,6 @@
 <app-fatura-modal
     *ngIf="showModalFatura"
     [fatura]="fatura"
-    (submitButton)="getAllFaturas()"
+    (submitButton)="getAllUnidades()"
     (onCloseModal)="closeModal()">
 </app-fatura-modal>

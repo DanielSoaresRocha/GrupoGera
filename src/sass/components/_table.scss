@@ -35,6 +35,7 @@
           padding: 12px;
           border-bottom: 1px solid #cbc8c8;
           &:last-child {
+            white-space: nowrap;
             img {
               cursor: pointer;
               & + img {

@@ -9,14 +9,14 @@
         <div class="c-form-group mt-5">
             <div class="c-form-group__input">
                 <img src="../../../../assets/images/icons/user-circle.svg"/>
-                <input (blur)="onBlur($event)"/>
+                <input appInputFocus />
                 <label>Username</label>
             </div>
             <div class="c-form-group__line"></div>
 
             <div class="c-form-group__input">
                 <img src="../../../../assets/images/icons/key.svg" />
-                <input (blur)="onBlur($event)" type="password"/>
+                <input appInputFocus type="password"/>
                 <label>Password</label>
             </div>
             <div class="c-form-group__line"></div>

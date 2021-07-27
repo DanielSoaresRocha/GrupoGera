@@ -39,7 +39,7 @@ export class GraficoComponent implements OnInit{
 
       unidadesConsumo.push({
         unidade: unidade.nome,
-        mediaConsumo: consumo
+        mediaConsumo: consumo.toFixed(0)
       })
     })
 
