@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="src/assets/images/demonstration/logo.jpg" width="200px" float="center"/>
+  <img src="src/assets/images/demo/logo.jpg" width="200px" float="center"/>
 </p>
 
 <h1 align="center">Grupo Gera</h1>
@@ -13,35 +13,35 @@ Desenvolver um dashboard que possibilitará a visualização, criação, modific
 
 <div align="center">
   <br>
-    <img src="src/assets/images/demonstration/auth.png" alt="Screenshot1" width="100%">
+    <img src="src/assets/images/demo/auth.png" alt="Screenshot1" width="100%">
   <br>
     Tela inicial
 </div>
 
 <div align="center">
   <br>
-    <img src="src/assets/images/demonstration/dashboard.png" alt="Screenshot1" width="100%">
+    <img src="src/assets/images/demo/dashboard.png" alt="Screenshot1" width="100%">
   <br>
     Dashboard
 </div>
 
 <div align="center">
   <br>
-    <img src="src/assets/images/demonstration/unidades-consumidoras.png" alt="Screenshot1" width="100%">
+    <img src="src/assets/images/demo/unidades-consumidoras.png" alt="Screenshot1" width="100%">
   <br>
     Unidades Consumidoras
 </div>
 
 <div align="center">
   <br>
-    <img src="src/assets/images/demonstration/faturas.png" alt="Screenshot1" width="100%">
+    <img src="src/assets/images/demo/faturas.png" alt="Screenshot1" width="100%">
   <br>
     Faturas
 </div>
 
 ## Responsividade ⚖
 
-![git to demonstration](src/assets/images/demonstration/demo-gif.gif)
+![git to demo](src/assets/images/demo/demo-gif.gif)
 
 ## Tecnologias usadas 📚
 
