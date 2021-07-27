@@ -1,12 +1,64 @@
-# GrupoGera
+<p align="center">
+  <img src="src/assets/images/demonstration/logo.jpg" width="200px" float="center"/>
+</p>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.3.
+<h1 align="center">Grupo Gera</h1>
 
-## Passos Iniciais
+## Objetivo
 
+Desenvolver um dashboard que possibilitará a visualização, criação, modificação e remoção de unidades consumidoras dos clientes, além das tarifas que elas possuem.<br />
+<strong>Prazo: 1 semana<strong>
+
+## O que foi desenvolvido? 🚀
+
+<div align="center">
+  <br>
+    <img src="src/assets/images/demonstration/auth.png" alt="Screenshot1" width="100%">
+  <br>
+    Tela inicial
+</div>
+
+<div align="center">
+  <br>
+    <img src="src/assets/images/demonstration/dashboard.png" alt="Screenshot1" width="100%">
+  <br>
+    Dashboard
+</div>
+
+<div align="center">
+  <br>
+    <img src="src/assets/images/demonstration/unidades-consumidoras.png" alt="Screenshot1" width="100%">
+  <br>
+    Unidades Consumidoras
+</div>
+
+<div align="center">
+  <br>
+    <img src="src/assets/images/demonstration/faturas.png" alt="Screenshot1" width="100%">
+  <br>
+    Faturas
+</div>
+
+## Responsividade ⚖
+
+![git to demonstration](src/assets/images/demonstration/demo-gif.gif)
+
+## Tecnologias usadas 📚
+
+- HTML5
+- SCSS
+- TypeScript
+- Angular 10
+- RXJS
+
+## Desenvolvimento 🎬
+
+Ciclo de desenvolvimento utilizado:
+
+- Prototipação (Figma)
 - Script de iniciação (ng serve --port 9091 --open)
-- Configuração do scss
-- Estilos scss padrões
+- Configuração do SCSS
+- Estilos SCSS padrões
 - Criação de módulos principais (ng g m modules/home)
 - Configuração de rotas (app-routing.module.ts) e index.ts
 - Criação de componentes dos módulos (ng g c modules/auth/login)
@@ -16,28 +68,39 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Criação dos serviços e models
 - TsConfig
 - Componetização (Separar responsabilidades)
+- Testes unitários
 - Refatoração e melhorias
 
-## Development server
+Clonando o repositório:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```
+git clone https://github.com/DanielSoaresRocha/GrupoGera.git
+```
 
-## Code scaffolding
+Navegando até a pasta do repositório:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
+cd grupo-gera
+```
 
-## Build
+Baixando as dependências
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+<small>Execute:</small> `npm i` ou `yarn`
 
-## Running unit tests
+Rodando o projeto
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+<small>O navegador será aberto automaticamente com o servidor iniciado na porta 9091</small>
+<br />
+<small>Execute:</small> `npm run start` ou `yarn start`
 
-## Running end-to-end tests
+## License 📝
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) - see the [LICENSE](LICENSE) file for details.
 
-## Further help
+## Autor
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/DanielSoaresRocha"><img src="https://avatars0.githubusercontent.com/u/43214747?s=400&u=a267d113c5469b84bf87d202cdb7129330e4c865&v=4" width="100px;" alt="Daniel Soares"/><br /><sub><b>Daniel Soares</b></sub></a><br /><a href="https://github.com/DanielSoaresRocha/ESIG-challenge/commits?author=DanielSoaresRocha" title="Code">💻</a></td>
+  <tr>
+</table>
